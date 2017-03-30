@@ -1,9 +1,9 @@
 ﻿using System;
 namespace rpg_object_world
 {
-	public class RPGStatus
+	public class RPGStatus:RPGObject
 	{
-		public string version{get;set;}
-		public string status{get;set;}
+		public string Version{get;set;}
+		public string Status{get;set;}
 	}
 }

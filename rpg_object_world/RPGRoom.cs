@@ -11,18 +11,23 @@ namespace rpg_object_world
 		public RPGRoom ExitDown { set; get; }
 		public RPGRoom ExitRight { set; get; }
 		public RPGRoom ExitLeft { set; get; }
+		public RPGRoom()
+		{
+			
+		}
 		public RPGRoom(string aName, string aDescription) : base(aName, aDescription)
 		{
 			
 		}
 		public override string ToString()
 		{
-			string output = base.ToString();
+			string output = "";
 
-			output += "\nObjects:\n";
-			foreach (string oName in objects.Keys)
+			output += string.Format("Room {0}",Name);
+			output +="\n";
+			foreach (string oName in Objects.Keys)
 			{
-				output += "  "+objects[oName].ToString()+"\n";
+				output += "  "+Objects[oName].ToString()+"\n";
 			}
 
 			return output;

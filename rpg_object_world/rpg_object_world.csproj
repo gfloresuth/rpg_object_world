@@ -40,6 +40,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SimpleRESTClient.cs" />
     <Compile Include="RPGStatus.cs" />
+    <Compile Include="RPGRoom.cs" />
+    <Compile Include="RPGObject.cs" />
+    <Compile Include="RPGWorld.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

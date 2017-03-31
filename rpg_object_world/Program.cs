@@ -16,12 +16,25 @@ namespace rpg_object_world
 		}
 		public static void Main(string[] args)
 		{
-			//RPGObject o;
-
-
+			SimpleRESTClient.localFile = Environment.GetEnvironmentVariable("RPG_OBJECT_WORLD_PATH")+"objectworld.json";
+			Console.WriteLine(SimpleRESTClient.localFile);
+			Console.WriteLine("Wait...");
 			SimpleRESTClient src = new SimpleRESTClient();
-			RPGWorld status=src.getStatus();
-			Console.WriteLine("{0}",status.ToString());
+			RPGWorld world=src.getStatus();
+			if (world == null)
+			{
+				Console.WriteLine("No external data, reading local data...");
+				world = src.getLocal();
+			}
+
+			if (world != null)
+			{
+				Console.WriteLine("{0}", world.ToString());
+			}
+			else
+			{
+				Console.WriteLine("No data.");
+			}
 			Console.WriteLine("End.");
 
 		}
